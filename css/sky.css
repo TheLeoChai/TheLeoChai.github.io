@@ -41,7 +41,7 @@
     filter: drop-shadow(0 0 6px rgba(105, 155, 255, 1));
   }
     
-#sky-txt > span{
+#sky-txt-nav > span{
 	top: 0;
 	right: 0;
 	float: right;
@@ -49,14 +49,27 @@
 	padding: 6px 12px;
 	font-size: 24px;
 	caret-color: transparent;
-	transition: color 0.5s;
+	transition: color 0.3s;
 }
 
-#sky-txt > span:hover{
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 2px #fff;
+  }
+  to {
+    text-shadow: 0 0 5px #fff;
+  }
+}
+
+#sky-txt-nav > span:hover{
 	cursor: pointer;
+	color: #00d4c0;
+  	-webkit-animation: glow 2s ease-in-out;
+  	-moz-animation: glow 2s ease-in-out;
+  	animation: glow 2s ease-in-out;
 }
 
-#sky-txt{
+#sky-txt-nav{
 	position: absolute;
 	top: 0;
 	wdith: 100%;

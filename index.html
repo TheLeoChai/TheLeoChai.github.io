@@ -191,22 +191,6 @@
 		});
 	</script><!--sticky paralax-->
 	<script>
-		var lastScrollTop = 0;
-		$(window).scroll(function(event){
-			var st = $(this).scrollTop();
-		   if(st > lastScrollTop){
-			   if(st >= $(window).height() * 0.775){
-				   //$(".on-open-top").fadeIn(300);
-			   }
-		   }else{
-			  if(st <= $(window).height() * 0.775){
-				   //$(".on-open-top").fadeOut(300);
-			   }
-		   }
-		   lastScrollTop = st;
-		});
-	</script>
-	<script>
 		$(window).scroll(function(){
 			
 			var st = $(this).scrollTop();
@@ -343,6 +327,48 @@
 		
 
 	</script><!--star animation-->
+	<script>
+		const quotes = [
+			`UNEXPECTED THINGS ALWAYS HAPPEN, SO THERE IS ALWAYS SOMETHING TO LEARN`,
+			`THE HARDEST PART OF REACHING A GOALS IS KNOWING WHAT THE GOAL IS`,
+			`NOTHING IS IMPOSSIBLE GIVEN ENOUGH EFFORT IN THE RIGHT DIRECTION`,
+			`OPPORTUNITIES VISITS EVERYONE BUT ONLY THOSE PREPARED TAKE ADVANTAGE OF THEM`,
+			`MY SPECIAL TALENT IS BEING PASSIONATELY CURIOUS`,
+			`ONLY WHEN ALL THE WHEELS ARE SPINNING CARS MOVE FORWARD`,
+			`WHEN YOU BELIEVE IN WHAT YOU DO, EFFORT COMES NATURALLY`,
+			`THE TOMORROW IS ONLY BRIGHT IN CONTRAST OF THE DARKNESS OF TONIGHT`,
+			`WORKING ON SOMETHING IS NOT HARD, CONTINUOUSLY IS`,
+			`YOUR FRIENDS TODAY IS YOUR WORLD OF TOMORROW`,
+			`GROWTH AND CHANGE IS PAINFUL, BUT NOT AS SO AS BEING STUCK`
+			];
+		
+		let curind = -1;
+			
+		function refreshQuote(){
+		
+			var len, rand, ind;
+			
+			do{
+				len = quotes.length;
+				rand = Math.random();
+				ind = Math.floor(len * rand);
+			} while(curind == ind);
+			
+			curind = ind;
+
+			$("#Leo-fav-quote").html(quotes[ind]);
+			//console.log(quotes[ind]);
+				
+		}
+		$(document).ready(function(){
+			refreshQuote();
+			
+			$("#Leo-fav-quote").on("click", function(){
+				//console.log("clicked");
+				refreshQuote();
+			});
+		});
+	</script>
 
 </head>
 
@@ -406,9 +432,17 @@
 
 		<div id="sky">
 			<div id="star-path"></div>
-			<div id="sky-txt">
+			<div id="sky-txt-nav">
 				<span class="color-white">AUTO</span>
 				<span class="color-white">NEXT</span></div>
+			<div id="sky-txt">
+				<span class="color-white">Hello</span>
+				<span class="color-white">I am Leo</span>
+				<span class="color-white">I specialize in Business Administration and Computer Science</span>
+				<span class="color-white">Very different fields, I know</span>
+				<span class="color-white">But because of their difference, I also see a different and special world</span>
+				<span class="color-white">Learn More about me</span>
+			</div>
 		</div>
 
 	</div>
@@ -421,30 +455,11 @@
 		<div id="statc" class="stat"></div>
 		<div id="statd" class="stat"></div>
 		<div id="state" class="stat"></div>
-		<p>LEARN CONTINUALLY - THERE'S ALWAYS "ONE MORE THING" TO LEARN!</p>
+		<p id="Leo-fav-quote" title="click to change quote"></p>
 	</div>
 	<div class="me-snap"></div>
 	<div id="path">
 		<div><h1>You Are Looking For A</h1></div>
-		<!-- Slider main container
-		<div class="swiper">
-		  	Additional required wrapper
-		  	<div class="swiper-wrapper">
-				Slides
-				<div class="swiper-slide">Slide 1</div>
-				<div class="swiper-slide">Slide 2</div>
-				<div class="swiper-slide">Slide 3</div>
-				<div class="swiper-slide">Slide 4</div>
-				<div class="swiper-slide">Slide 5</div>
-				<div class="swiper-slide">Slide 6</div>
-				<div class="swiper-slide">Slide 7</div>
-				<div class="swiper-slide">Slide 8</div>
-		  	</div>
-			
-			
-  			<div class="swiper-scrollbar"></div>
-	
-		</div> -->
 		
 	</div>
 	<div id="resume"></div>
