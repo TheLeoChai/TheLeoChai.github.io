@@ -1,5 +1,6 @@
 :root{
 	--mn-b1: #e1e5e5;
+	--mn-b2: #102;
 	--sec-b2: #fff;
 	--txt-1: #171717;
 	--a-1: #00d4c0;
@@ -10,7 +11,7 @@ body{
 	margin:0;
 	padding:0;
 	font-family: 'Roboto Condensed', sans-serif;
-	background: var(--mn-b1);
+	background: #000;
 	overflow-x: hidden;
 }
 
@@ -151,6 +152,9 @@ body, html {
 	text-align: right;
 	margin:0;
 	color: inherit;
+	margin-block-start: 0;
+	padding-inline-start: 0;
+	margin-left: 40px;
 }
 
 .nav-cont ul li{
